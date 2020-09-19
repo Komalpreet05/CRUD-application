@@ -1,0 +1,418 @@
+
+  <%- include ('./partials/navbar') %>
+<style>
+ /*  h3#heading2 {
+    color: greenyellow;
+    font-size: 45px;
+    
+}
+ */
+/* main {
+    margin-top: 4em;
+    /* padding: 20px; */
+
+
+/* #para1{
+  padding: 25px;
+} */
+
+/* #para2{
+  line-height: 26pt;
+  font-size: 18px;
+} */
+
+
+
+
+/* #new{
+  background-color: #3a811e;
+  border-color: #3a811e;
+  padding: 20px;
+  color: white;
+  margin-right: 10px;
+  margin-top: 100px;
+  width: 470px;
+}
+ */
+/* #link1:hover{
+  text-decoration: none;
+}
+
+#link1{
+  color: white;
+} */
+
+#section1r, #section2r, #section3r{
+  margin: 0;
+  margin-top: 4em !important;
+} 
+
+
+ .accordion {
+  background-color: #eee;
+  color: black;
+  cursor: pointer;
+  padding: 30px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.4s;
+}
+ 
+
+.accordion:after {
+  content: '\02C5';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-bottom: 8px;
+}
+
+
+
+ .current, .accordion:hover {
+  background-color: white;
+}
+
+button.accordion{
+  outline: none;
+  background-color: white;
+  
+}
+
+.current:after {
+  content: "\02C4";
+}
+
+#heading3{
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+#heading4{
+  font-size: 40px;
+  font-weight: 400;
+}
+
+span.accordion-icon {
+    margin-right: 37px;
+}
+ 
+.panelImg{
+  float: left;
+}
+
+p.dropAccord {
+    margin-right: 100px;
+}
+
+img.dropimg {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#jumbo, #steps{
+  padding: 40px;
+}
+
+.jumbotron{
+  background-color: white;
+}
+
+.column {
+  float: left;
+  padding: 20px;
+}
+
+#gridImg{
+  margin-top: 3.5em;
+  padding: 6px;
+}
+
+#gridImg2{
+  margin-left: 60px;
+  padding: 10px;
+}
+
+#backImg{
+  height: 500px;
+  background-image: url("https://www.prestocard.ca/~/media/afms/images/learn-how-img2.ashx?h=500&w=1650&la=en&hash=03383DCA0FA7A5CBEFE6A0830E9B5091974306A6");
+}
+
+.row.row-body {
+    margin: 0;
+}
+
+.newtxtcol {
+    padding: 100px 50px 0 50px;
+}
+/* Clearfix (clear floats) */
+h1#heading5 {
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+</style>
+  <header id="welcomeHead">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12 text-center">
+          <h1 id="heading1">Tap On. Ride Easy.</h1>
+          <h3 id="heading2">Welcome <%= name %></h3>>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main >
+    <div class="row" id="section1r">
+      <div class="col-md-1">
+
+      </div>
+      <div class="col-md-4" id="para1">
+        <h1>What is PRESTO?</h1><br>
+        <p id="para2">PRESTO is an electronic payment system that eliminates the need for tickets, tokens, passes and cash. PRESTO works across local transit in the <strong>Greater Toronto and Hamilton Area (GTHA) and Ottawa,</strong> making paying for your trip simple, convenient and secure.</p>
+
+        <a id="link1" href="/about"><button type="button" id="new" class="btn btn-light btn-lg">Find out more about PRESTO</button></a>
+      </div>
+
+      <div class="col-md-1">
+
+      </div>
+      
+      <div class="col-md-6">
+    
+        <img src="https://www.prestocard.ca/~/media/afms/images/presto-elec-transparent.ashx?h=760&w=832&la=en&hash=B84EE258856C3E3BB3F7F4D3CDF3FE5D705D8904" width="740px" height="600px">
+      </div>
+    </div>
+
+    <div class="container services-list">
+      <div class="row row-body" id="section3r">
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="services">
+                  <div class="sevices-img text-center py-4">
+                      <img src="https://www.prestocard.ca/~/media/afms/images/home-page-about-component/vectore-img1.ashx?h=102&w=166&la=en&hash=3A5AE220652ED750BFD8711312BB5B9C52AB324A" alt="Services-1">
+                  </div>
+                  <div class="card-body text-center">
+                      <h5 class="card-title text-uppercase font-roboto">PRESTO works in lots of places.</h5>
+                      <p class="card-text text-secondary">
+                        One card. Eleven transit agencies. It’s payment made easier.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="services">
+                  <div class="sevices-img text-center py-4">
+                      <img src="https://www.prestocard.ca/~/media/afms/images/home-page-about-component/vectore-img2.ashx?h=95&w=150&la=en&hash=130BD6BFEBD8DAB6664DD7F9F2FB6370CF21221C" alt="Services-2">
+                  </div>
+                  <div class="card-body text-center">
+                      <h5 class="card-title text-uppercase font-roboto">Pay for transit on your terms.</h5>
+                      <p class="card-text text-secondary">
+                        Add money in person or online, even set up automatic reloading (Autoload) to make paying for your trip seamless.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="services">
+                <div class="sevices-img text-center py-4">
+                    <img src="https://www.prestocard.ca/~/media/afms/images/home-page-about-component/vectore-img3.ashx?h=84&w=145&la=en&hash=6AEAE0B8C463352A02832DD0787F9E071FC0CD6A" alt="Services-2" height="97px">
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title text-uppercase font-roboto">Travel with peace of mind.</h5><br>
+                    <p class="card-text text-secondary">
+                      Take the worry out of travel, if you set up a My PRESTO Account, card balances are protected from loss or theft.
+                    </p>
+                </div>
+            </div>
+        </div>
+          
+          
+      </div>
+  </div>
+
+  <div class="row row-body" id="section2r">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10" id="steps">
+      
+      <h2 id="heading3">Why have a PRESTO Account?</h2>
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="https://www.prestocard.ca/~/media/afms/images/GridItems/balance-protection.ashx?h=200&w=368&la=en&hash=A316AAECF485647B100EB2CDFB281FEA4E620F91" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Balance Protection</h5>
+            <p class="card-text">If your PRESTO card is ever lost or stolen, you can cancel it and transfer funds to your new card.</p>
+           
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://www.prestocard.ca/~/media/afms/images/GridItems/autoload.ashx?h=200&w=368&la=en&hash=5EFBF7812E5FF8C1B885F5B7C9F75E08B60D5AE7" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Autoload</h5>
+            <p class="card-text">Add funds to your PRESTO card instantly and automatically whenever your balance falls below a set amount. Set up Autoload now.</p>
+           
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://www.prestocard.ca/~/media/afms/images/GridItems/autorenew.ashx?h=200&w=368&la=en&hash=BC776813C670F6DA3E3D370F7FCC019B34652FE9" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Autorenew</h5>
+            <p class="card-text">Add passes to your card automatically every month. Set up Autorenew now.</p>
+            
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://www.prestocard.ca/~/media/afms/images/GridItems/manage-multiple-cards.ashx?h=200&w=368&la=en&hash=F23346DEE6CF0E7D60286E2DAB9B678A717F6E27" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Manage Multiple Cards</h5>
+            <p class="card-text">Manage up to 10 different PRESTO cards with one My PRESTO account and see up to two years of transaction history.</p>
+         
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+
+
+
+  
+
+  <div class="row row-body" id="section2r">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10" id="steps">
+      
+      <h2 id="heading3">You can get started in just three simple steps.</h2>
+
+<button class="accordion"><span class="accordion-icon"><img  src="https://www.prestocard.ca/~/media/afms/images/accordion/simple-step-icon1.ashx?h=38&w=38&la=en&hash=BB16410597D9138F8B54FA091F3B40773AC0CB1B"></span>
+  <strong>Step 1:</strong> Purchase a PRESTO card </button>
+<div class="panel">
+  <p class="accord"><span class="panelImg"><img class="dropimg" src="https://www.prestocard.ca/~/media/afms/images/learn-using-presto-icon1.ashx?h=201&w=369&la=en&hash=21BDBB6245878AFC23C87700119F923041675C3B">
+  </span> <p class="dropAccord"><strong>Online: </strong>Order a card online. Your card will be mailed to you within 7-10 business days. You can create a My PRESTO Account or be without an account.<br><br>
+
+  Buy in person: At a Customer Service Outlet. Your card is ready to use immediately, and your My PRESTO Account can be created online after 24 hours.</p>
+</p>
+</div>
+
+<button class="accordion"><span class="accordion-icon"><img src="https://www.prestocard.ca/~/media/afms/images/accordion/simple-step-icon2.ashx?h=38&w=38&la=en&hash=3F88C816783A740D2F22CE2E78D8B40E63D07820"></span> 
+  <strong>Step 2:</strong> Activate your new PRESTO card </button>
+  <div class="panel">
+    <p class="accord"><span class="panelImg"><img class="dropimg" src="https://www.prestocard.ca/~/media/afms/images/smartphone-presto-card-balance.ashx?h=200&w=366&la=en&hash=BE2D714C28796234861C40010BDDA2ED92E6E89E">
+    </span> <p class="dropAccord">If you ordered a card with a My PRESTO Account from the PRESTO website, you'll need to activate it before you ride. Cards purchased in person are already activated.<br><br>
+  
+      Activate your card online, through our Chat feature, or by calling PRESTO at 1-877-378-6123 and following the automated instructions.</p>
+  </p>
+  </div>
+
+<button class="accordion"><span class="accordion-icon"><img src="https://www.prestocard.ca/~/media/afms/images/simple-step-icon4.ashx?h=38&w=38&la=en&hash=523B056063343DFA2FBFDB86F467BE2077EDE0C1"></span> 
+  <strong>Step 3:</strong> Use your card to pay for your trip </button>
+  <div class="panel">
+    <p class="accord"><span class="panelImg"><img class="dropimg" src="https://www.prestocard.ca/~/media/afms/images/presto-card-tap-transit.ashx?h=200&w=367&la=en&hash=D25CE3A0B30E452C749005E4C1697F4E2240D8FD">
+    </span> <p class="dropAccord">After funds or a transit pass have been added to the card, you're ready to ride. Tap your card on a PRESTO device at the beginning of your ride to pay for your transit quickly, simply, and securely.</p>
+  </p>
+  </div>
+
+
+
+      
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+
+  <div class="row row-body">
+    <div class="col-md-1">
+
+    </div>
+
+    <div class="col-md-10" id="jumbo">
+      <div class="jumbotron">
+        <h2 class="display-4" id="heading4">Where can you use PRESTO?</h1>
+        <div class="row" id="gridImg">
+          <div class="column">
+            <a target = "blank" href="https://www.brampton.ca//en/residents/transit/Pages/Home.aspx"><img src="https://www.prestocard.ca/~/media/afms/images/thumbnail/brampton-transit-150x63px.ashx?h=63&w=150&la=en&hash=78551669290BF4F6D358B392B792C19FC42F1BD5" alt="Snow" style="width:100%"></a>
+          </div>
+          <div class="column">
+            <a target = "blank" href="https://www.burlingtontransit.ca/en/index.aspx"><img src="https://www.prestocard.ca/~/media/afms/images/thumbnail/burlington-transit-150x63px.ashx?h=63&w=150&la=en&hash=3702137144447764CAC47940D6CE21AD42D4422C" alt="Forest" style="width:100%"></a>
+          </div>
+          <div class="column">
+            <a target = "blank" href="https://www.durhamregiontransit.com/en/index.aspx"><img src="https://www.prestocard.ca/~/media/afms/images/thumbnail/drt-150x63px.ashx?h=63&w=150&la=en&hash=9D6BE1266BEAB6DA1531EFC7BAF70A62751364FC" alt="Mountains" style="width:100%"></a>
+          </div>
+          <div class="column">
+            <a target = "blank" href="https://www.gotransit.com/en/"><img src="https://www.prestocard.ca/~/media/afms/images/thumbnail/go-150x63px.ashx?h=63&w=150&la=en&hash=F509799695C777F31D9A78089A32CAC2F3B06805" alt="Mountains" style="width:100%"></a>
+          </div>
+          <div class="column">
+            <a target = "blank" href="https://web.mississauga.ca/miway-transit/"><img src="https://www.prestocard.ca/~/media/afms/images/thumbnail/miway-150x63px.ashx?h=63&w=150&la=en&hash=01B6C223A6549D139FB2AB72538A556302A79E33" alt="Mountains" style="width:100%"></a>
+          </div>
+          <div class="column">
+            <a target = "blank" href="https://www.hamilton.ca/hsr-bus-schedules-fares"><img src="https://www.prestocard.ca/~/media/afms/images/productimages/hsr1-150x63px.ashx?h=63&w=150&la=en&hash=A7882DD3E79A43DB9CE8507B1051348A0BC8F91D" alt="Mountains" style="width:100%"></a>
+          </div>
+          
+        </div>
+
+
+        <div class="row" id="gridImg2">
+          <div class="column">
+            <a href="https://www.oakvilletransit.ca/index.html" target="blank"><img src="https://www.prestocard.ca/~/media/afms/images/productimages/oakville-240x44px.ashx?h=44&w=240&la=en&hash=FEA863CF8830E21F1AD32AC738CCF6F45F390960" alt="Snow" style="width:100%"></a>
+          </div>
+          <div class="column">
+            <a href="https://www.octranspo.com/en/" target="blank"><img src="https://www.prestocard.ca/~/media/afms/images/thumbnail/oct-150x63px.ashx?h=63&w=150&la=en&hash=6F49BDD000C6141A3A67BA946E34DD13ED6334A5" alt="Forest" style="width:100%"></a>
+          </div>
+          <div class="column">
+            <a href="http://www.ttc.ca/" target="blank"><img src="https://www.prestocard.ca/~/media/afms/images/thumbnail/ttc-150x63px.ashx?h=63&w=150&la=en&hash=31BE5775EA46FCB9093BD1AF4095B7825AB5732E" alt="Mountains" style="width:100%"></a>
+          </div>
+          <div class="column">
+            <a href="https://www.yrt.ca/en/" target="blank"><img src="https://www.prestocard.ca/~/media/afms/images/thumbnail/yrt-viva-logo-stacked-150x63px-transparent.ashx?h=63&w=150&la=en&hash=BA6A7FBF5B06E830BE7D5EB07009A3D6D402268C" alt="Mountains" style="width:100%"></a>
+          </div>
+          <div class="column">
+            <a href="https://www.upexpress.com/" target="blank"><img src="https://www.prestocard.ca/~/media/afms/images/thumbnail/up-150x63px.ashx?h=63&w=150&la=en&hash=4CB21ACA1F0F69860D5553A5CB01988D72EBC1F8" alt="Mountains" style="width:100%"></a>
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-1">
+
+    </div>
+  </div>
+
+  <div class="row row-body">
+    <div class="tfd" id="backImg">
+      <div class="col-md-6 newtxtcol">
+      <h1 id="heading5">Learn more about how PRESTO makes travelling quicker, easier and more convenient.</h1>
+      <a id="linka" href="/prestoApp"><button type="button" id="new1" class="btn btn-light btn-lg">Learn More</button></a>
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+  </main>
+
+  <%- include ('./partials/footer') %>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="javascript/dashboard.js"></script>
+
+

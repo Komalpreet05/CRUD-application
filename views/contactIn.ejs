@@ -1,0 +1,272 @@
+<%- include ('./partials/navbar') %>
+
+<style>
+
+
+
+
+
+.input_field input{
+margin-bottom:10px;
+margin-left: 30%px;
+}
+
+.wrapper .input_field input[type="text"],
+.wrapper textarea{
+
+  width:60%;
+  border:1px solid rgb(102, 102, 102);;
+  padding:10px;
+  margin-left:20%;
+
+
+
+
+}
+
+#set{
+  margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+</style> 
+
+
+  
+  <div class="heading">
+
+    <h1 id="h1main">
+        Contact PRESTO
+    </h1>
+    <br>
+    <p id="h1line"> Have a question or need some help with PRESTO? Contact us in a number of different ways</p>
+    
+  </div>
+  
+
+  <dl class="accordion">
+
+    <dt class='dt'><a class="a1" href="">BY CHAT</a></dt>
+    <dd class='dd'>PRESTO has an online Chat feature to help with general questions. If you sign in to your PRESTO Account you can also now use the Chat feature for account-specific transactions, including: <br>
+      <br>
+      YOU CAN ASK GIVEN QUESTION IN CHAT BOX. MAKE SURE TEXT OF QUESTION WILL BE SAME AS BELOW GIVEN QUESTION!<br>
+      Q: Costs of monthly recharge <br>
+      Q: Cost of new presto card <br>
+      Q: Time peroid of monthly recharge <br>
+      
+      <br>
+    PRESTO offers a 24/7 Virtual Assistant, as well as Live Chat Agents that are available during the same hours as our Contact Centre, Monday to Friday 6 a.m. to 10 p.m., weekends 9 a.m. to 9 p.m. and on holidays 9 a.m. to 5 p.m.
+    <br>
+  
+      <form id='chatForm'>
+        <input id="input" placeholder="ASK QUESTIONS?">
+
+        <div id="output">
+
+        </div>
+      </form>
+    <dd>
+  
+  <br>
+
+  <dt class='dt'><a class="a1" href="">BY PHONE</a></dt>
+    <dd class='dd'>
+    Calls from within Canada/United States: 1-8-PRESTO-123 (1-877-378-6123)<br>
+    Calls from outside Canada/United States: 905-397-2034 (long distance charges may apply)<br>
+     <br>
+     Our Interactive Voice Response system is available 24 hours a day, 
+     7 days a week. Live agents are available
+    to help Monday to Friday 6 a.m. to 10 p.m., weekends 9 a.m. to 9 p.m. and on holidays 9 a.m. to 5 p.m.
+     
+    </dd>
+  
+
+
+  
+    <dt class='dt'><a class="a1" href="">BY MAILING ADDRESS</a></dt>
+    <dd class='dd'>
+      PRESTO Customer Service Centre<br>
+      P.O. Box 730, St. Catharines Main, St. Catharines, ON L2R 6Y6
+     
+    </dd>
+    
+    
+    <dt class='dt'><a class="a1" href="">BY EMAIL</a></dt>
+    
+    <dd class='dd'> Complete the form below and we'll get back to you within five business days. For urgent matters, we recommend you call us at 1-877-378-6123
+      <br><br>
+      <p id="errorp">Error Box will indicates required fields</p>
+      <br>
+      <br>
+      
+      <div class='wrapper'>
+        
+        <div id="error_message"></div>
+
+        <form id='formC'>
+            <div class="input_field">
+              <input type="text" placeholder="NAME" id="name">
+            </div>
+
+            <div class="input_field">
+              <input type="text" placeholder="SUBJECT" id="subject">
+            </div>
+
+            <div class="input_field">
+              <input type="text" placeholder="PHONE NUMBER" id="phone">
+            </div>
+
+            <div class="input_field">
+              <input type="text" placeholder="EMAIL" id="email">
+            </div>
+
+            
+            
+
+            <div class="input_field">
+              <textarea id="message" placeholder="message"></textarea>
+            </div>
+            
+            
+
+            <div class="b1">
+              <input type="SUBMIT" id="bt1" onclick="return validation()">
+
+            </div> 
+            
+
+            
+            
+            
+        </form>
+        </div>
+      </dd>
+
+      </dl>
+      <div class="heading">
+
+        <h2 id="h2">
+          Contact Your Transit Agency
+        </h2>
+        <br>
+        
+        
+      </div>
+
+      <div class="container">
+        <div class="row" id="set">
+            <div class="col-sm-4">
+
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://s3-media0.fl.yelpcdn.com/bphoto/71v6n3DTSZ0YQS49ETL98g/o.jpg" height="200px" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="cardTitle">Brampton Transit</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Contact Number</h6>
+                  <p class="card-text">905-874-2999</p>
+                  <a href="https://www.brampton.ca//EN/residents/transit/Contact-Us/Pages/Terminals-and-Facilities.aspx" height="200px" class="Link">Website</a>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="//live.staticflickr.com/1726/42290582512_80d17cc50a_c.jpg" height="200px" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="cardTitle">Burlington Transit</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Contact Number</h6>
+                  <p class="card-text">905-639-0550 (BusLine)</p> 
+                  
+                  <a href="https://www.burlingtontransit.ca/en/index.aspx" class="Link">Website</a>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://www.cp24.com/polopoly_fs/1.2763358.1585432633!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg" height="200px" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="cardTitle">Toronto Transit(TTC)</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Contact Number</h6>
+                  <p class="card-text">416-393-4636</p>
+                  <a href="http://www.ttc.ca/" class="Link">Website</a>
+                  
+                </div>
+              </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-sm-4">
+              <br>
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://www.inhalton.com/sites/inhalton.com/files/imagecache/lead-image-full/article/2019/08/transit.jpg" height="200px" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="cardTitle">Oakville Transit</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Contact Number</h6>
+                  <p class="card-text">905-815-2020</p>
+                  <a href="https://www.oakvilletransit.ca/" class="Link">Website</a>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <br>
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Milliken_GO_Station_dscn0550.jpg" height="200px" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="cardTitle">Go Transit</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Contact Number</h6>
+                  <p class="card-text">1-888-438-6646</p>
+                  <a href="https://www.gotransit.com/en/travelling-with-us/safety-and-security/go-transit-covid-safety?gclid=CjwKCAjw1K75BRAEEiwAd41h1HbkTCLUU6uLwDDgqe0ivT-i5xoZ7GdCcd_bW0TOFqjNznk0qEATWRoCg-4QAvD_BwE" class="Link">Website</a>
+                  
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-sm-4">
+              <br>
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://dynamicmedia.zuza.com/zz/m/original_/f/4/f468d8f4-a3fb-4983-89e8-f9ee076e7c92/freebus_Super_Portrait.jpg" height="200px" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="cardTitle">MiWay</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Contact Number</h6>
+                  <p class="card-text">905-615-4636</p>
+                  <a href="https://web.mississauga.ca/miway-transit/" class="Link">Website</a>
+                  
+                </div>
+              </div>
+            </div>
+            
+        </div>
+    </div>
+
+      
+
+
+    <%- include ('./partials/footer') %>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="javascript/navbar.js"></script>
+<script src="javascript/contact.js"></script>
+<script src="javascript/contactQues.js"></script>
+
+<script>
+(function($) {
+    
+  var allPanels = $('.accordion > dd').hide();
+    
+  $('.accordion > dt > a').click(function() {
+    allPanels.slideUp();
+    $(this).parent().next().slideDown();
+    return false;
+  });
+
+})(jQuery);
+</script>

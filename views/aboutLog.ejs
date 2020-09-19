@@ -1,0 +1,202 @@
+<%- include ('./partials/navbarOut') %>
+
+    <style>
+        #faq {
+            /*background-color: #e9ecef;*/
+            margin: 5rem;
+            height: auto;
+        }
+        
+        .card {
+            margin: 1rem 0rem;
+        }
+        
+        div#headingOne {
+            padding: 1rem 1.25rem !important;
+        }
+
+        img#survey-img {
+    width: 500px;
+    height: 300px;
+    
+}
+
+h5.mb-0.text-success {
+    cursor: pointer;
+}
+    </style>
+    <div class="about text-center">
+        <h1 id="about-head">Customer Service Outlets</h1>
+        <p id="customer-para">
+            You should only purchase PRESTO cards and load funds or passes through authorized sales channels, which include prestocard.ca, Fare Vending Machines, Self-Serve Reload Machines, and our Customer Service Outlets. Never purchase a card or try to load funds
+            and passes through an unauthorized seller.
+        </p>
+        <p id="out-para" class="text-success">
+            Find NearBy Outlet
+        </p>
+
+    </div>
+    <div class="row row-set">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1fL4D3tXdgzuhKY3ZoQhxvcia2EHJIVWG" width="1000" height="480"></iframe>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+
+
+    <!-- Take survey -->
+
+    <div id="take-survey" class="jumbotron">
+        <h1 id="survey-head" class="display-4 text-center">Take Our Survey</h1>
+        <p class="lead text-center">Please Kindly Give Your Feedback. We are Excited to hear from you.</p>
+        <hr class="my-4">
+        <div class="row row-set">
+
+            <div id="col-1" class="col-md-5">
+                <p id="main-para">We value your opinion and we would love to serve you better. We are hosting surveys every month to learn more about what you think as we continue to find new ways to improve. Thank you for taking the time to fill out our survey. We look
+                    forward to getting your feedback!
+
+                </p>
+                <p class="lead">
+                    <a class="btn btn-success btn-lg btn-block" href="https://surveys.ipsosinteractive.com/surveys/25b6acb2-de68-11e2-a28f-0800200c9a66" role="button" target="blank">Customer Satisfaction Survey</a>
+                </p>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+            <div id="col-2" class="col-md-5">
+                <img id='survey-img' src="https://unsplash.com/photos/SpVHcbuKi6E/download" alt="take survey">
+            </div>
+            <div class="col-md-1">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Faq -->
+    <div id="faq">
+        <h1 id="faq-head" class="text-center text-success">
+            Have Question??
+        </h1>
+        <div class="row row-set">
+            <div class="col-md-6">
+                <img id="faq-img" src="images/faq.jpg" alt="FAQ">
+            </div>
+
+            <div class="col-md-6" id="check">
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0 text-success" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What Is PRESTO?
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                PRESTO is an electronic payment system that makes travelling on transit faster and easier by eliminating the need for tickets, tokens, passes and cash. PRESTO works across local transit services in the Greater Toronto and Hamilton Area (GTHA) and Ottawa,
+                                making paying for your trip simple, convenient and secure.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0 text-success" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">What are the Benefits of PRESTO?
+                            </h5>
+
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                PRESTO allows users to pay for their travel using an electronic fare card that replaces the need to use cash, tickets, tokens or passes on public transit. Creating a PRESTO account helps protect your card balance. If your card is ever lost or stolen,
+                                the money can be transferred to a replacement card. You can't do that with any other form of transit payment. You can have money automatically loaded to your card when your balance falls below minimum amount that you set.
+                                You can use your PRESTO card across 11 transit agencies in the Greater Toronto and Hamilton Area (GTHA) and Ottawa area. By using PRESTO you're also eligible for discount fare trips on participating transit services.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0 text-success" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Can I use my PRESTO card across transit agencies in the Greater Toronto, Hamilton and Ottawa Areas?
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body">
+                                Yes, your PRESTO card can be used on any of the 11 participating transit agencies in Ontario, including OC Transpo in Ottawa. Visit Paying for Transit to see the full list of PRESTO transit agencies. Greater Toronto and Hamilton Area cards issued prior
+                                to 2013 will not be accepted on Société de transport de l'Outaouais (STO).
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0 text-success" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Is it OK if I punch a hole in my card?
+                            </h5>
+
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                Punching a hole in your PRESTO card will damage the antenna and chip, rendering it useless. In addition, PRESTO and our Transit Agency partners are not liable for any damaged cards. If the card is damaged you will be responsible for buying a replacement
+                                card for the cost of $6.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0 text-success" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">My card has stopped working. How do I get a replacement?
+                            </h5>
+
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                You can get a replacement PRESTO card and transfer your balance from the old card to your new card. First, you need to purchase a new card online or in person at a Customer Service Outlet or Ticket Vending Machine. Once you get a new card, please do not
+                                register it, or add a monthly pass. This will be done automatically as part of the transfer process. When you are ready to transfer the balance from your old card to your new card, log in to your My PRESTO Account, click
+                                on Report Lost/Damaged card and follow the instructions.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0 text-success" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">How do I pay for transit using PRESTO?
+                            </h5>
+
+                        </div>
+                        <div id="collapseSix" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                Your PRESTO card stores funds in a secure account, replacing the need for tickets, tokens, passes or cash. When you tap your PRESTO card on a fare payment device, the electronic chip embedded in the card instantly calculates the fare and deducts it from
+                                your account.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0 text-success" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">Can more than one person use the same PRESTO card to travel at different times?
+                            </h5>
+
+                        </div>
+                        <div id="collapseSeven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                Yes, PRESTO cards are transferable between riders. If you are using a card that has a Child, Youth or Senior fare type, you must also be eligible for any discounted fares set on the card. A child, youth or senior may use an adult's PRESTO card to travel
+                                at full adult fare. However, an adult may not use a youth’s, child’s or senior’s PRESTO card to travel.
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <%- include ('./partials/footerOut') %>
+
+    <script src="javascript/navbar.js"></script>
+    <script src="javascript/about.js"></script>
+
+

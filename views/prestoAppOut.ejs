@@ -1,0 +1,314 @@
+<%- include ('./partials/navbarOut') %>
+<style>
+  a#linked {
+    color: rgb(58, 129, 30);
+    text-decoration: none;
+    font-weight: 700;
+}
+  .accordion_button {
+              display: block;
+              width: 100%;
+              padding: 15px;
+              border: none;
+              outline: none;
+              cursor: pointer;
+              background: #3e4945ab;
+              color: white;
+              text-align: left;
+            }
+            
+            .accordion_button::after {
+              content: '\25be';
+              float: right;
+              transform: scale(1.5);
+
+            }
+
+            .accordion_button--active {
+              background: #212529
+            }
+
+            .accordion_button--active::after {
+              content: '\25b4'
+            }
+
+            .accordion_content {
+              overflow: hidden;
+              max-height: 0;
+              transition: max-height 0.2s;
+
+              padding: 0 15px;
+              font-family:Arial, Helvetica, sans-serif;
+              background: #eeeeee
+            }
+
+            .immg {
+              opacity: 0.5;
+            }
+
+            .immg:hover {
+              opacity: 1.0;
+            }
+</style>
+<div class="heading">
+
+  <h1 id="h1main">
+    PRESTO App
+  </h1>
+  <br>
+  <p id="h1line"> Download the official PRESTO app for a simple, easy way to manage and instantly load your card on the go.</p>
+  
+</div>
+
+<div class="row row-set">
+  <div class="col-md-6">
+
+  </div>
+  <div class="col-md-2">
+    
+      <div class="column">
+        <a href="https://play.google.com/store/apps/details?id=com.metrolinx.presto.android.consumerapp" target="blank"><img src="https://www.prestocard.ca/~/media/afms/images/presto-mobile-app/google-play-250x74px.ashx?la=en&hash=97A26AB32DEA858447FFDFD8C6D4E2E4BB451F02" alt="Android" style="width:100%"></a>
+      </div>
+    </div>
+  <div class="col-md-2">
+      <div class="column">
+        <a href="https://apps.apple.com/ca/app/presto/id1437927882" target="blank"><img src="https://www.prestocard.ca/~/media/afms/images/presto-mobile-app/apple-store-250x74px.ashx?la=en&hash=033E1F5F815B0D313F18CADEFDC32BA5EBF46AA8" alt="Android" style="width:100%"></a>
+      </div>
+      
+    
+  </div>
+
+  <div class="col-md-2">
+
+  </div>
+  
+  
+</div>
+
+<div class="row row-set">
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-3">
+    <img id="this" src="https://www.prestocard.ca/~/media/afms/images/presto-mobile-app/presto-mobile-app-hero-600x532px.ashx" width="330" height="280">
+  </div> 
+  <div class="col-md-5">
+    <div class="para">
+      <p>With the official PRESTO app you can manage your card anytime, anywhere.<br>
+        Loading your PRESTO card has never been easier.</p>
+      <p>You can:</p>
+      <ul>
+        <li>load funds and transit passes in real time</li>
+        <li>view your last tap on a device and current balance real time</li>
+        <li>receive low balance/pass expiry reminders and email receipts for fare purchases</li>
+        <li>pay with Apple Pay, Google Pay and Saved Payment Method</li>
+        <li>set up and manage Autoload and Autorenew</li>
+        <li>manage multiple PRESTO cards</li>
+        <li>check your PRESTO card balances</li>
+        <li>view your transaction history</li>
+        <li>buy a PRESTO card and create a PRESTO account</li>
+    </ul>
+      <p>If you need help, check out our <a id="linked" href="/contactOut">online chat feature</a>.</p>
+    </div>
+
+  </div>
+  
+  <div class="col-md-2">
+
+  </div>
+</div>
+
+<div class="heading">
+
+  <h1 id="h2main">
+    Frequently Asked Questions
+  </h1>
+  <br>
+
+</div>
+
+<div class="row row-set">
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-10">
+    <div class="accordion">
+      <button id="btn" type="button" class="accordion_button">Why can't load through my NFC</button>
+      <div class="accordion_content">
+        <p>You might receive an NFC Load Error using the “Load Now” option. This usually means that your PRESTO card was held in the wrong place or moved away from your phone too soon. Try holding the card to the top, middle or bottom of your phone and hold the card steady until you see the confirmation screen.
+        </p>
+  
+         <p> Sometimes this error happens due to problems with your phone’s NFC hardware or software. In this case, you won’t be able to load PRESTO cards directly with your phone. But don’t worry, your load will still be ready to use in 4-24 hours. The next time you want to load funds or a transit pass through the app, select the “Load Later” option.
+        </p>
+      </div>
+  </div>
+  
+  <br>
+  <div class="accordion">
+    <button type="button" class="accordion_button">What if my card is not working after NFC load, or my phone crashes or the battery dies when I am in middle of loading funds?  </button>
+    <div class="accordion_content">
+      <p>If you log out and back in to the app, you will immediately be prompted to complete the load. You can do this on your own phone, or by logging in to your account on another NFC-enabled phone. If you do not see this prompt, that load will only be available on a PRESTO device and you will not be able to use your card to travel.
+      </p>
+      <p>If this is the case and you have the latest version of the app, an “Unlock Card Now” prompt will appear on the home screen. Follow the instructions to unlock your card to take transit and pick up your load from a PRESTO device.
+      </p>
+      <p>If you are using an older version of the app, please update it to use the “Unlock Card Now” feature. Otherwise you will either need to use the Check Balance feature or perform another load through the app before you can use your card to take transit and pick up your first load from a PRESTO device.
+      </p>
+    </div>
+  </div>
+  
+  <br>
+  <div class="accordion">
+  <button type="button" class="accordion_button"> Why am i getting an "Unlock Card Now" message?</button>
+  <div class="accordion_content">
+    <p>This message appears when you are unable to complete your NFC load within 24 hours. After 24 hours, your funds will be sent to the PRESTO devices for pick up and your card cannot be used for travel. You must follow the “Unlock Card Now” prompt and the instructions in the app to unlock your card. Once you do this, you will be able to use your card to take transit and pick up your funds from any PRESTO device.
+    </p>
+  </div>
+  </div>
+  
+  <br>
+  <div class="accordion">
+  <button type="button" class="accordion_button">Why can't I see a recent transaction I made through the app? </button>
+  <div class="accordion_content">
+    <p>
+      It can take a few hours for your transaction to appear and for your balance to update on the app.
+    </P>
+  </div>
+  </div>
+  
+  <br>
+  <div class="accordion">
+  <button type="button" class="accordion_button">I loaded funds/a pass on the app. Why isn't it on my card yet? </button>
+     <div class="accordion_content">
+       <p>
+        It takes some time for your card load to be processed through the PRESTO system.
+       </p>
+  
+       <p>
+        For customers without NFC-enabled phones: once you’ve purchased funds or a pass through the app, you will need to wait between 4 and 24 hours for the funds to be ready to use. And remember, monthly passes only start working on the 1st of the month.
+       </p>
+  
+       <p>
+        For customers with NFC-enabled phones: once your payment is processed, you can load your funds or passes instantly by holding your PRESTO card against the back of your phone. Your card balance information will be updated shortly after.
+       </p>
+  </div>
+  </div>
+  
+  <br>
+  <div class="accordion">
+    <button type="button" class="accordion_button">Why can't I add my new PRESTO card to my app? </button>
+      <div class="accordion_content">
+        <p>
+          It can take a few hours for your newly purchased cards to be activated in our system. If you are experiencing issues adding a newly purchased card, please wait a few hours and try again.
+        </p>
+  </div>
+  </div>
+  
+  
+  <br>              
+  <div class="accordion">
+    <button type="button" class="accordion_button">Do I have to have a My PRESTO Account to use the app? </button>
+      <div class="accordion_content">
+        <p>
+          You do not need to create a new account to use the app. If you already have a PRESTO account, you can sign in to the app with that account. If you do not have a PRESTO account and would like to make use of PRESTO features, such as balance protection, transaction history, and to set up contracts like Autoload and Autorenew, you can set up a PRESTO account through the PRESTO App.
+        </p>
+    </div>
+  </div>
+  
+  
+  
+  <br>
+    <div class="accordion">
+      <button type="button" class="accordion_button">If I have the app, can i tap my phone to pay fare </button>
+       <div class="accordion_content">
+      <p>
+        No, at this time you can’t tap your phone to pay for transit.
+      </p>
+    </div>
+   </div>
+  
+  
+   <br>
+    <div class="accordion">
+      <button type="button" class="accordion_button">Where can i see my full transaction history? </button>
+        <div class="accordion_content">
+          <p>You can only see the last three months of your transaction history through the app. If you would like to see more, you can use the PRESTO website to see your transaction history for the last 24 months.
+          </p>
+        </div>
+      </div>
+  
+      <br>
+      <div class="accordion">
+        <button type="button" class="accordion_button">What happens if i lose my phone? </button>
+        <div class="accordion_content">
+          <p>
+            Your account information will still be in the PRESTO system so you’ll still be able to access your account through the PRESTO website. You can download the app again to your new phone and log in with the same account.
+          </p>
+             
+          <p>
+            We recommend changing your account password as soon as possible to ensure your account is secure.
+          </p>
+        </div>
+    </div>
+  
+        <br>
+        <div class="accordion">
+          <button type="button" class="accordion_button">I am having toruble opening the app, what do i do? </button>
+            <div class="accordion_content">
+              <p>There are a number of reasons why the app may not load properly:</p>
+              <ul>
+              <li>You must be connected to the internet either through Wi-Fi or mobile network to use the app.</li>
+              <li>There has been a network error.</li>
+              <li>You have modified the original device operating system.</li>
+              <li>You have not installed recent updates.</li>
+              <li>You declined to accept the Terms & Conditions and / or Privacy Policy.</li>
+              <li>We are performing system updates on our servers; notifications of planned outages will be posted on prestocard.ca.</li>
+              </ul>
+              <p>
+                For issues unrelated to the PRESTO app, contact your phone manufacturer or service provider.
+              </p>
+          </div>
+      </div>
+  
+        <br>
+        <div class="accordion">
+          <button type="button" class="accordion_button">I can't use my PRESTO card to travel beacuse I was not able to complete my instant load. Why isn't the Check Balance feature making my card work again? </button>
+            <div class="accordion_content">
+            <p>
+              If you are still unable to use your PRESTO card after checking your balance through the app, it is possible that you have not installed the latest app update. You can update your app through the App Store or Play Store and then try to use the Check Balance feature again. Otherwise, you will need to perform another load through the app before you can use your card to take transit.
+          </p>
+          </div>
+      </div>
+  
+        <br>
+        <div class="accordion">
+          <button type="button" class="accordion_button">Can I use the PRESTO App's NFC features with all iPhones? </button>
+            <div class="accordion_content">
+            <p>
+              For iPhones, these features are available for iPhone 7 and higher running iOS 13 and higher.
+          </p>
+          </div>
+      </div>
+  
+  
+  </div>
+  
+  
+  
+    
+  </div>
+  </div>
+  </div>
+</div>
+
+
+  
+<%- include ('./partials/footerOut') %>
+
+<script>
+
+
+
+
+</script>
+
+<script src="javascript/prestoApp.js"></script>

@@ -1,0 +1,482 @@
+<%- include ('./partials/navbar') %>
+<style>
+      footer.footer {
+	background: #559598;
+	padding: 30px 10% 0px;
+}
+
+.first.footercol {
+	width: 33.14%;
+	
+	float: left;
+}
+
+.social img {
+	width: 48px;
+	padding-right: 10px;
+}
+
+.social a{
+	text-decoration: none;
+}
+.mainfoot {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.first.footercol h3 {
+	font-size: 32px;
+	color: black;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+
+ul.footlink {
+	padding-left: 10px;
+	list-style: none;
+}
+
+ul.footlink li,
+.first.footercol p {
+	padding: 0px;
+	font-size: 19px;
+	margin-bottom: 8px;
+	color: #fff;
+}
+
+ul.footlink li a {
+	color: #fff;
+}
+
+.copyfoot {
+	text-align: center;
+	padding: 15px;
+	border-top: 1px solid #fff;
+	margin-top: 10px;
+}
+
+.copyfoot p {
+	color: #fff;
+}
+
+img.editIcon {
+    border-radius: 80px;
+}
+</style>
+<main>
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-6" id="abc">
+            <label for="themeControl" >Choose your Theme for form: </label>
+            <button type="button" id="default" class="btn btn-secondary">Default</button>
+            <button type="button" id="dark" class="btn btn-dark">Dark Theme</button>
+            <button type="button" id="green" class="btn btn-dark">Theme 1</button>
+            <button type="button" id="yellow" class="btn btn-primary">Theme 2</button>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-10">
+                <div id="form">
+                    <h3 id="info">Enter your information to register with us</h3>
+
+                    <%- include ('./partials/messages') %>
+                    <form class="form-group" action="/booking/edit/<%= booking._id %>" id="regForm" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="bookS" for="firstName">First Name:</label>
+                                <input id="firstName" class="form-control" type="text" placeholder = "first name" name="firstName" value="<%= booking.firstName %>" required>
+                                <span class="error" id="fname_error"> </span><br>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="bookS" for="lastName">Last Name:</label>
+                                <input id="lastName" class="form-control" type="text" placeholder = "last name"name="lastName" value="<%= booking.lastName %>" required>
+                                <span class="error" id="lname_error"> </span><br>
+                            </div>
+                        </div>
+                        <label class="bookS" for="Address">Address:</label>
+                        <input id="address" class="form-control" type="text" placeholder = "address"name="address" value="<%= booking.address %>" required>
+                        <span class="error" id="address_error"> </span><br>
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label class="bookS" for="City">City:</label>
+                                <input id="city" class="form-control" type="text" placeholder = "city"name="city" value="<%= booking.city %>" required>
+                                <span class="error" id="city_error"> </span><br>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label class="bookS" for="date">Depart date:</label>
+                                <input id="date" class="form-control" type="date" name="date" value="<%= booking.date %>" required>
+                                <span class="error" id="date_error"> </span><br>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="bookS" for="zipCode">Zip Code:</label>
+                                <input id="zipCode" class="form-control" type="text" placeholder="X1Y 2Z3" name="zipCode" value="<%= booking.zipCode %>" required>
+                                <span class="error" id="zip_error"> </span><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="bookS" for="phone">Phone Number:</label>
+                        <input id="phone" class="form-control" type="text" name="phone" placeholder="XXX-XXX-XXXX" value="<%= booking.phone %>" required>
+                        <span class="error" id="phn_error"> </span><br>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label class="bookS" for="busNumber">Bus route Number:</label>
+                            <input id="busNumber" class="form-control" type="text" name="busNumber" placeholder="Bus Number" value="<%= booking.busNumber %>" required>
+                            <span class="error" id="busNumber_error"> </span><br>
+                            </div>
+                        </div>
+                        
+                        <label class="bookS" for="email">E-mail Address:</label>
+                        <input id="email" class="form-control" type="text" name="email" placeholder="john@gmail.com" value="<%= booking.email %>" required>
+                        <span class="error" id="email_error"> </span><br>
+
+                        <label class="bookS" for="method">Preferred method of communication:</label><br>
+                        <input type="radio" id="e-mail" name="method" value="e-mail"checked>
+                        <label class="bookS" for="e-mail">E-mail</label><br>   
+                        <input type="radio" id="phnBox" name="method" value="phnBox">
+                        <label class="bookS" for="phnBox">Phone</label><br><br>
+
+                        <button type="submit" class="btn btn-success" id="submit" onclick="return validate()">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-1">
+                
+            </div>
+            
+        </div>
+        <br>
+        <br>
+        <br>
+        
+        
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="mainfoot">
+            <div class="first footercol">
+                <h3>About</h3>
+                <p>Presto </p>
+                <p>Canada</p>
+                <p>1-877-378-6123</p>
+                
+            </div>
+            <div class="first footercol">
+                <h3>Quick Links</h3>
+                <ul class="footlink">
+              <li><a href="/">Home</a></li>
+              <li><a href="/prestoApp">Learn</a></li>
+              
+              <li><a href="/about">About </a></li>
+              <li><a href="/contactIn">Contact Us</a></li>
+              
+              <li><a href="/booking/book">Book</a></li>
+           </ul>
+            </div>
+            <div class="first footercol">
+                <h3>Follow Us</h3>
+                <div class="social">
+                    <a href="https://www.facebook.com/PRESTOcard">
+                    <img src="/images/fb.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/explore/tags/prestocard/?hl=en">
+                    <img src="/images/insta.png" alt="Instagram">
+                    </a>
+                    <a href="https://twitter.com/PRESTOcard">
+                    <img src="/images/tw.png" alt="Google+">
+                    </a>
+                    <a href="https://www.youtube.com/user/PRESTOcard">
+                    <img src="/images/yt.png" alt="YouTube">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyfoot">
+            <p>Presto Canada</p>
+        </div>
+    </footer>
+    <script>
+      // changing themes function
+let theme1 = document.getElementById('dark');
+
+theme1.addEventListener("click", first);
+function first(){
+    document.getElementById('form').style.background = 'black';
+    document.getElementById('form').style.backgroundSize = 'cover';
+    document.getElementById('info').style.backgroundRepeat = 'no-repeat';   
+}
+
+let theme2 = document.getElementById('yellow');
+theme2.addEventListener("click",second);
+function second(){
+    document.getElementById('form').style.backgroundImage = 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHU8KCF4EhVLWd4oVEhLzE8RjL6WOFHAIhPA&usqp=CAU")';
+    document.getElementById('form').style.backgroundSize = 'cover';
+    document.getElementById('info').style.backgroundRepeat = 'no-repeat';  
+}
+
+let theme3 = document.getElementById('green');
+theme3.addEventListener("click", third);
+function third(){
+    document.getElementById('form').style.backgroundImage = 'url("https://images.sharefaith.com/images/3/1595614756329_3/img_mouseover3.jpg")';
+    document.getElementById('form').style.backgroundSize = 'cover';
+    document.getElementById('info').style.backgroundRepeat = 'no-repeat';  
+}
+
+let defaultTheme = document.getElementById('default');
+defaultTheme.addEventListener("click",fourth);
+
+function fourth(){
+    document.getElementById('form').style.backgroundImage = 'url("https://www.w3schools.com/howto/img_lights_wide.jpg")';
+    document.getElementById('form').style.backgroundSize = 'cover';
+    document.getElementById('info').style.backgroundRepeat = 'no-repeat';  
+    document.getElementById('info').style.color = 'white';
+}
+
+/////------------CSS------------------
+
+
+document.body.style.padding = '0'; // css on body
+document.body.style.margin = '0'; // css on body
+
+document.getElementById('form').style.backgroundImage = 'url("https://www.w3schools.com/howto/img_lights_wide.jpg")';
+    document.getElementById('form').style.backgroundSize = 'cover';
+    document.getElementById('info').style.backgroundRepeat = 'no-repeat';  
+document.getElementById('form').style.padding = "40px"; // css on form 
+
+let cssL = document.getElementsByClassName("bookS");
+for (let x = 0; x < cssL.length; x++) {
+	cssL[x].style.color = "white";
+}
+
+
+//css on errors of validation
+let css4 = document.getElementsByClassName("error");
+for (let x = 0; x < css4.length; x++) {
+	css4[x].style.color = "red";
+}
+
+let cssC = document.getElementsByClassName("editIcon");
+for (let x = 0; x < cssC.length; x++) {
+	cssC[x].style.height = "20px";
+}
+
+
+
+// css on buttons of themes
+let css6 = document.getElementById("abc");
+css6.style.marginTop = "20px";
+css6.style.marginBottom = "20px";
+
+//css on table
+let css7 = document.getElementById("info");
+css7.style.color = "white";
+css7.style.marginBottom = "20px";
+
+
+//css on submit button
+let css8 = document.getElementById("submit");
+css8.style.background = "#3a811e";
+css8.style.borderTopColor = "#3a811e";
+
+css8.addEventListener('mouseover', (event)=>{
+    css8.style.opacity = "0.8";
+})
+
+css8.addEventListener('mouseout', (event)=>{
+    css8.style.opacity = "1";
+})
+
+function validate(){
+let first_name = document.getElementById('firstName').value;
+let last_name = document.getElementById('lastName').value;
+let address_1 = document.getElementById('address').value;
+let city = document.getElementById('city').value;
+let date_1 = document.getElementById('date').value;
+let zip = document.getElementById('zipCode').value;
+let phn = document.getElementById('phone').value;
+let busNum = document.getElementById('busNumber').value;
+let email = document.getElementById('email').value;
+
+var matches = first_name.match(/\d+/g);
+if(first_name == "")
+{
+    text="Please enter your first name";
+    document.getElementById('fname_error').firstChild.nodeValue = text;
+    document.getElementById('firstName').focus();
+    return false;
+   
+}
+else if(matches != null){
+    text="Please enter a valid first name";
+    document.getElementById('fname_error').firstChild.nodeValue = text;
+    document.getElementById('firstName').focus();
+    return false;
+}
+else{
+    text=" ";
+    document.getElementById('fname_error').firstChild.nodeValue = text;
+    
+}
+
+var matchesL = last_name.match(/\d+/g);
+if(matchesL !=null){
+    text="Please enter a valid last name";
+    document.getElementById('lname_error').firstChild.nodeValue = text;
+    document.getElementById('lastName').focus();
+    return false;
+}
+else if(last_name==""){
+    text="Please enter your last name";
+    document.getElementById('lname_error').firstChild.nodeValue = text;
+    document.getElementById('lastName').focus();
+    return false;
+}
+else{
+    text=" ";
+    document.getElementById('lname_error').firstChild.nodeValue = text;
+}
+
+if(address_1 == "")
+{
+    text="Please enter your address";
+    document.getElementById('address_error').firstChild.nodeValue = text;
+    document.getElementById('address').focus();
+    return false;
+}
+else if(address_1!=""){
+    text=" ";
+    document.getElementById('address_error').firstChild.nodeValue = text;
+}
+else{
+    text=" ";
+    document.getElementById('address_error').firstChild.nodeValue = text;
+}
+
+var matchesC = city.match(/\d+/g);
+if(matchesC !=null){
+    text="Please enter a valid city";
+    document.getElementById('city_error').firstChild.nodeValue = text;
+    document.getElementById('city').focus();
+    return false;
+}
+else if(city==""){
+    text="Please enter a city";
+    document.getElementById('city_error').firstChild.nodeValue = text;
+    document.getElementById('city').focus();
+    return false;
+}
+
+else{
+    text=" ";
+    document.getElementById('city_error').firstChild.nodeValue = text;
+    
+} 
+
+if(date_1 == "")
+{
+    text="Please enter your depart date";
+    document.getElementById('date_error').firstChild.nodeValue = text;
+    document.getElementById('date').focus();
+    return false;
+}
+
+else{
+    text=" ";
+    document.getElementById('date_error').firstChild.nodeValue = text;
+}
+
+var postalCodeRegex = zip.match(/^[ABCEGHJKLMNPRSTVXYabceghjklmnprstvxy]{1}\d{1}[A-Za-z]{1}\d{1}[A-Za-z]{1}\d{1}$/);
+if(zip == "")
+{
+    text="Please enter a Zip Code";
+    document.getElementById('zip_error').firstChild.nodeValue = text;
+    document.getElementById('zipCode').focus();
+    return false;
+   
+}
+else if(postalCodeRegex != null){
+    text="Please enter a valid Zip Code";
+    document.getElementById('zip_error').firstChild.nodeValue = text;
+    document.getElementById('zipCode').focus();
+    return false;
+}
+else{
+    text=" ";
+    document.getElementById('zip_error').firstChild.nodeValue = text;
+    
+}
+
+if(phn == "")
+{
+    text="Please enter your phone number";
+    document.getElementById('phn_error').firstChild.nodeValue = text;
+    document.getElementById('phone').focus();
+    return false;
+   
+}
+else if(isNaN(phn)||phn.length !=10){
+    text="Please enter a valid phone number";
+    document.getElementById('phn_error').firstChild.nodeValue = text;
+    document.getElementById('phone').focus();
+    return false;
+}
+
+else{
+    text=" ";
+    document.getElementById('phn_error').firstChild.nodeValue = text;
+    
+}
+
+if(busNum == "")
+{
+    text="Please enter your bus number of route";
+    document.getElementById('busNumber_error').firstChild.nodeValue = text;
+    document.getElementById('busNumber').focus();
+    return false;
+   
+}
+
+else if(isNaN(busNum)||busNum.length>3||busNum.length<1){
+    text="Please enter a valid bus number";
+    document.getElementById('busNumber_error').firstChild.nodeValue = text;
+    document.getElementById('busNumber').focus();
+    return false;
+}
+else{
+    text=" ";
+    document.getElementById('busNumber_error').firstChild.nodeValue = text;
+    
+}
+if(email.indexOf('@')==-1 || email.length<7){
+    text="Please enter a valid email address";
+    document.getElementById('email_error').firstChild.nodeValue = text;
+    document.getElementById('email').focus();
+    return false;
+}
+else if(email == "")
+{
+    text="Please enter your email address";
+    document.getElementById('email_error').firstChild.nodeValue = text;
+    document.getElementById('email').focus();
+    return false;
+   
+}
+else{
+    text=" ";
+    document.getElementById('email_error').firstChild.nodeValue = text;
+    
+}
+}
+</script>
+
+ 

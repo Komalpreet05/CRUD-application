@@ -1,0 +1,522 @@
+<%- include ('./partials/navbar') %>
+<style>
+      footer.footer {
+	background: #559598;
+	padding: 30px 10% 0px;
+}
+
+.first.footercol {
+	width: 33.14%;
+	
+	float: left;
+}
+
+.social img {
+	width: 48px;
+	padding-right: 10px;
+}
+
+.social a{
+	text-decoration: none;
+}
+.mainfoot {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.first.footercol h3 {
+	font-size: 32px;
+	color: black;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+
+ul.footlink {
+	padding-left: 10px;
+	list-style: none;
+}
+
+ul.footlink li,
+.first.footercol p {
+	padding: 0px;
+	font-size: 19px;
+	margin-bottom: 8px;
+	color: #fff;
+}
+
+ul.footlink li a {
+	color: #fff;
+}
+
+.copyfoot {
+	text-align: center;
+	padding: 15px;
+	border-top: 1px solid #fff;
+	margin-top: 10px;
+}
+
+.copyfoot p {
+	color: #fff;
+}
+button#green {
+    background: #5f4a49;
+    border-color: #5f4a49;
+}
+
+img.editIcon {
+    border-radius: 80px;
+}
+
+</style>
+<main>
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-6" id="abc">
+                <label for="themeControl" >Choose your Theme for form: </label>
+                <button type="button" id="default" class="btn btn-secondary">Default</button>
+                <button type="button" id="dark" class="btn btn-dark">Dark Theme</button>
+                <button type="button" id="green" class="btn btn-dark">Theme 1</button>
+                <button type="button" id="yellow" class="btn btn-primary">Theme 2</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-10">
+                <div id="form">
+                    <h3 id="info">Enter your information to book your seat with us</h3>
+
+                    <form class="form-group" action="/booking/book" id="regForm" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="bookS" for="firstName">First Name:</label>
+                                <input id="firstName" class="form-control" type="text" name="firstName" placeholder="first name" required>
+                                <span class="error" id="fname_error"> </span><br>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="bookS" for="lastName">Last Name:</label>
+                                <input id="lastName" class="form-control" type="text" name="lastName" placeholder="last name" required>
+                                <span class="error" id="lname_error"> </span><br>
+                            </div>
+                        </div>
+                        <label class="bookS" for="Address">Address:</label>
+                        <input id="address" class="form-control" type="text" name="address" placeholder="address" required>
+                        <span class="error" id="address_error"> </span><br>
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label class="bookS" for="City">City:</label>
+                                <input id="city" class="form-control" type="text" name="city" placeholder="city" required>
+                                <span class="error" id="city_error"> </span><br>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label class="bookS" for="date">Depart date:</label>
+                                <input id="date" class="form-control" type="date" name="date" required>
+                                <span class="error" id="date_error"> </span><br>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="bookS" for="zipCode">Zip Code:</label>
+                                <input id="zipCode" class="form-control" type="text" name="zipCode" placeholder="X1Y 2Z3" required>
+                                <span class="error" id="zip_error"> </span><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="bookS" for="phone">Phone Number:</label>
+                        <input id="phone" class="form-control" type="text" name="phone" placeholder="XXX-XXX-XXXX" required>
+                        <span class="error" id="phn_error"> </span><br>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label class="bookS" for="busNumber">Bus route Number:</label>
+                            <input id="busNumber" class="form-control" type="text" name="busNumber" placeholder="Bus Number" required>
+                            <span class="error" id="busNumber_error"> </span><br>
+                            </div>
+                        </div>
+                        
+                        <label class="bookS" for="email">E-mail Address:</label>
+                        <input id="email" class="form-control" type="text" name="email" placeholder="john@gmail.com" required>
+                        <span class="error" id="email_error"> </span><br>
+
+                        <label class="bookS" for="method">Preferred method of communication:</label><br>
+                        <input type="radio" id="e-mail" name="method" value="e-mail"checked>
+                        <label class="bookS" for="e-mail">E-mail</label><br>   
+                        <input type="radio" id="phnBox" name="method" value="phnBox">
+                        <label class="bookS" for="phnBox">Phone</label><br><br>
+
+                        <button type="submit" class="btn btn-success" id="submit" onclick="return validate()">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-1">
+                
+            </div>
+            
+        </div>
+        <br>
+        <br>
+        <br>
+        
+        <div class="row">
+            
+            <div class="col-md-12">
+        <div id="table">
+            <h3 id="Registered">All bookings</h3>
+            <table  class="table">
+               <thead class="thead-dark">
+                  <tr>
+                     <th scope="col">Name</th> 
+                     <th scope="col">Address</th>    
+                     <th scope="col">Phone Number</th>
+                     <th scope="col">Route</th>
+                     <th scope="col">Depart date</th>
+                     <th scope="col">Edit</th>
+                     <th scope="col">Delete</th>
+                  </tr>
+               </thead>
+               <tbody id="data">
+                
+                <% practices.forEach(function(practice){  %>
+                    <tr>
+                      <td><%= practice.firstName +" "+practice.lastName %></td>
+                      <td><%= practice.address %></td>
+                      <td><%= practice.phone %></td>
+                      <td><%= practice.busNumber %></td>
+                      <td><%= practice.date %></td>
+                      <td><a href="/booking/edit/<%= practice._id %>" onclick="return confirm('Are you sure you want to edit your reservation?');"><img class="editIcon" src="data:image/png;base64,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"></a></td>
+
+                      <td><a  href="/booking/book/<%= practice._id %>" onclick="return confirm('Are you sure you want to delete your booking?');"><img class="editIcon" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxETEhUSExASFRUWGBYYFhgWGBMSGBgYGBYWGBgXFxkYHSggGBolHxgYITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy8mICU3NS8rMC02NS8tLy8rLS0tLy0tLS0rLS0tLS0tLS0wLTUvLS0uLS0tLS0tLTctNS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQIDBAcGBQj/xABNEAABAwICBQYIDAMGBQUAAAABAAIRAwQSIQUxQVFhBhMiMnGBBxRSkZOhscEWFyNCVFVicoLR0tMzkvBDY7Kz4fEVJDRzdCU1oqPC/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAQFAQMGAgf/xAA3EQABAwEEBQkHBQEAAAAAAAAAAQIDBAUREiEUMUFSYQYTFiJRU3Gh8BUygZHB0eEjM0Kx8TT/2gAMAwEAAhEDEQA/ANor1muaQCCSMgq1mwsdLhAiM+5DLVzDiMQMzEqSrUFUYW69eeX9a0A296cYOlEzHcpbWoGthxAOeRUdE811tuqM9X+6bVoGocbYg78jkgInUXFxIBjFM8JmVcuarXNLWkEnUB2prbpoGDOR0eE6lDTtjTON0QN0zuQC2bSwku6IIjNF60vILekAIyTqzxVybrGeeXBRVb2nasLq1RrG6y4kBo2azGfBDKIqrchatqrWtDXEAjWD2qm2i4OxEGJmeEzKz7lB4SWuc4WdEv8A7yqCxmqMmZOd34VxuldLXd1/1FzUePIBwU+zA3I9+aiy1cbOJcUlh1M+aphTibBp7lpo6k0tdd0y7Lo05qnXqIYDB7Vy58KNJk8zaVqhygvLaLfP0j6lnlCgJhjJO5ok+rNerb8n7p+qiWje8hnqJn1KItdI73Gl0zk9SxJfM/zuPavfCVePMttbdmzpOqVPYWqFnhF0mBA8VAH92/8AUoqXI+uetUpN7MTvcFO3kY7bcD+Q/qXjnqlTclHZLMvuv0IGcvdIgyPFZH2Kn6lb+My/Iipb2zx9jnKZ85c72KM8jHfSB/If1KGryOrDq1abu3E380SWpQLSWS7L7p9D3dFeFNjJ56yrNmM6b21R25hq9qjy40fXd0bhrCYyqzRM7pd0fWs6r8nLpv8AZYhvYWu9Wv1Lyri3IMPYQdzmlp9ea9pXSN99pqfYFHL+y/zvPoijcMwN6TeqNRB2b1UtqTmuDnAgDWT2LBNH3Ve3M29epS2wDLD2sMtPeF2+i/ChUDebvKIIMfK0Rx1upn2g9ylRVkb8tRTVdg1MGbesnA0y9cHgBvSMzlugpLI4AQ7oknavP0HpShUZz1Ksyqw5dA5tOuHNMFp4GCr1ZvO5t2ZZ5KWUqoqLcpFc0nOcXNBIMQR2BXHVm4cOITERxiIUdO4FMYHTI1xqzz96iFq4HHIicW2YmdyGBtrTLXBzhAzzKlvTjjD0o1wnVK4qDA2ZO/Vlmm0RzUl23VGepAOs3BjYcYMzB3QFWuKLnOJAJB1EKWrTNU4mxAyzy4+9SMumsGEzIyMakBPz7PKCFS8RdvH9dyEA/wAbx9DDGLKZSmlzXSnFsjV/WpSVLZrQXAZjMZlQ29Q1DhdmIndmgHAc99nD36/9khr810ImNurWi4PNRgynXt1J9CiKgxO1+bUgGi0npzr6UducJBc850Iidszqz9yjddOaS2QGgxnuGWZ7FmXLLlxzjnULElrBIfXBMu2FtLcPt6zsygnxJI1iXuJNLSS1L8Eafg6LlRy3o2TnUqEV7iILdTKf33Db9kZ74WY6Vv691U5y5qmo7Y3UxnBjRkPadsqC0tSSGU2lzjqAzJ/reuz0PyVa2HV4e7yBmwdvlH1dqqnzyTrc3JDsqehpbObifm/1qOa0boitW/hs6PlHotHft7gV1FhyRpNzquNQ7uo31Znz9y6JojIati8u/wCUFvSyL8TvJZ0j2E6h3lGwsZm7zPEldUTrhjS7gmv5/wCHoW9symMLGNYNzQB7FKuMu+WNQ/w6TWje8lx8wgD1rybjTl0/XXeBubDP8MFZWoYmoMsud+brk8TSSmOrNGtzR3hZXUqud1nOd94l3tUeAbgta1XAkJY3a/y/Jq4rs8tvnCkBWSYBuCfTeW9UkdhI9iaVwC2N2P8AL8msJlWk1wwuaHDcQCPMVm9vpm5Z1a9T8Rx/45Xq2vLCsMqlNjxwlh949QXtKli6yO+yp25tuU9e/wCSlB+bJpHh0m/ynV3ELmNJ6Cr0ZLm4meU3Md41t9nFdZYcprepkXGmdz4aP5gcPrXsgrLoo5M08jDKypplwvz4L9FMotatSk/naFR1J+9uo8HDU4cCCFpHJDwjMMUbpjadQnovBik/Zt6h7cuIyCoaY5MU6kupxTfw6ju0DUeI8xXE39i+m406rIO46iN4O0cV5ZLJAueaG6alpLSblk/z/KH0D4tznTmJ2a9WXuSeNz0MP2ZnulZFyQ5c1rOKNZzqlvqa7rPpe9zOGsbNy12gKT6YrMcHAjG1zTLTlII3hWsUrZEvacdWUMtI/DIngvaKbfmunMxs1a8kA89l1Y79aZQrF5wuzB7tWafcDmoLMp1zmthDENXmujGKc51cPcl8Ux9OYxZxrS29MVBifmZjdlr96iq3LmEtbEDVtQEnj/2fX/ohTeKM3esoQFKg55cAS4jbMx3yrV4AG9AQZ+bkY7k6tcNc0tBkkQBmq9rTNM4niBEb8+5APshM4892LPzSo7suDobIH2ZA9SfdjnIwZxM7Ncb1nvhH5UuY3/h9F0PIPjDgc2MOYpgj5zgZPCN+Xh70Y29TfTU76iRI2a1PJ5e8sPGSbW3IFFuVaoIms7a0HyJ2/O7NfNaM0c+s4U6be07Gjef6zTNGWDqr20qYz9QG1x4LRtHWNO3pYW5AZucYEna5x2e5VKq6odiXUdwiRWbCkcaXvX1eomiNEU7dsNEuPWedZ/IcFBpflBRodHr1PJbs+8fm+3gvB07ypc6adAlrdRfqc77vkjjr7FzKw+dG9Vgp7OfKvOTrr2bfj2Hp6T05XrZOdhb5DJA79ru/LgvMCEKI5yuW9S5jjbGmFqXICEIXk9ghCEAIQhACEIQAr2jdLVqH8N+XknpN82zuhUULKKqLeh5exr0ucl6He6I5TUqsNf8AJv3Ey09jvcfWvT0lo+nXZgqNncRk5p3tOxZcvf0HylfRhlSX0/O5vZ5Q4ebcpcc6Lk8pqizVYuOBdWz7FHTOiX27sLs2nqu2OG47jwV/kbyqfYvFN7nOtXO6TcyaZJze0bWna3br16+wqMpXFKMn03jIj2jcQfMs90zot1B5Y7Np6rvKb+Y2hZuWB2NuoNdHXxrBMnW9eZvdR7DTD6RaQ4NLXMjMGDII2EJtlmTjz1Riz80rK/Blym5is20rO+SeTzLj8x5/sz9lxOW49uWq3Z5yAzONez2q2jkSRuJDiaykfSyrG/8A0ZeSHQyQI+bIEydys0GNLQXATGcxPfKitXimML8jM78u7sUFa3c5xc0SDqOS2EUTHU3v9aFe8aZ5XtSoCq20LOkSCBnknPqir0Rkdef+namtuy84CAAcsk99IUuk2SdWf+nYgPE5U6bGj7Z9Qw6o7o0m735xPAZuPAcQsRZjc4ucS+pUcS46y57j7ST617/L/Txu7wwfkqE02Aai7+0f5xHY0b1Z5FaLxONw4ZNyp/e2u7tXaTuVXUvWV+BNR2tk07aKlWoenWXV9EPb0Ho1trSJeQHEYqjjqEbJ8kfmVyvKHTzq5wtltIahqLz5TuG4e/VNyr03zruapn5NpzI+e4f/AJGzfr3LnpUaWTLA3UWVFSqq8/Nm5fL15CyllNQoxaDpRKahAOlEpqEA6USmoQDpRKahAOlEpqEA6USmoQDpRKahAenoTTD7d0iXMPXZv4t3O9vs7e7oUryhk4EOzY7a1357CO1ZqvX5O6ZNu/OTSd1xrj7Y4jbvHcpEMt3VdqK2tpFf+rFk5PP8nl31q5pdTeIc0weB3g7uPFa34OOU3P0CKpmtShlTVLh82p3wQeLTvC5Xllo4PYLhkEtAxR85h1O7p8x4LmeT+ljaXNOvngnBWA203ESe0ZOHFoUiB/MyYV1KV1oQJX0nONTrt9Khvb6ZqnEMoyz8+ztTm3QYMBBJGWUKPnxTADIc1wDgd87o2ZKRtoHjGSQTnlCtjhxniLvKHrQj/iB8ketCAnq27WtLmiCBkcz7VzHLHTzrezq1CZeRgpah8o8w0j7oxO/CvboNfiEh0bZmO+Vm3hi0kH3FC2bGGm01XREFziWt7wGn+da5n4GKpMs+n0iobH8zhrK1Liym3rOIA7TtP9bF2fKO9bbUGW1Iw5zYnaGfOd2uM+srzORlBuOpXfk2k05nYSDJ7mg/zLxdJXrq1R1V3zjkNzRk1vcPeqZHK1l+1TvXRpNOjP4s/vZ5FdCRCjlgKhIhAKhIhAKhIhAKhIhAKhIhAKhIhAKhIhAKhIhAKhIhAdfyN0mHA2tSCIOCdrfnM944TuXN6XsOZqvpHUDlxac2nzesKChWcxzXtMOaQQeIXS8qw2tRo3bBrGF3CZIB7HBw71Ivxs4oV6s5movT3X5L4/k7fwVaRFxZ83UzqW55rWf4eumfNLfwLp61w5pLWmANQy96x3wc35pXwZJi4YWZeW0F7T6nD8S223c0NGIiYzmJ75VvTyY40U4e1abmKpzU1LmnxHeKs8n1lCoYan2/WhbiuLdW5a4FoOZyGRXz/wApbvnb25qbOcLG9lOGD/DK3e5o8yx1YuEU2uedmTQSc+5fOVAktk5udJPEk/moNc7qIh0vJqK+Zz12J/Z0txU5mwp0xk64cXu+4CI84DPOV4C9XlPUHPc2OrRYymPwtBPrMdy82zs316tOgzrVXhgOuAdbjwAk9yr3Irno1PA6iJyRQrK7be5fj+Li3oPQlzeOLbenIb1qjjhpt4F208BJ4LsaXgpqkdO/aDubRLh5zUB9S0LRWjqVvSZRpNwsYIG8na529xOZKtyrSOkjamaXnG1Vu1Mr15tcKbDNfiod9Yn0A/dR8VDvrE+gH7q0qUStmjx7pF9rVneKZr8VDvrE+gH7qPiod9Yn0A/dWlSiU0ePdHtas7xTNfiod9Yn0A/dR8VDvrE+gH7q0qUSmjx7o9rVneKZr8VDvrE+gH7qPiod9Yn0A/dWlSiU0ePdHtas7xTNfiod9Yn0A/dR8VDvrE+gH7q0qUSmjx7o9rVneKZr8VDvrE+gH7qPiod9Yn0A/dWlSiU0ePdHtas7xTNfiod9Yn0A/dR8VDvrE+gH7q0qUSmjx7o9rVneKZr8VDvrE+gH7qPiod9Yn0A/dWlSiU0ePdHtas7xTM3+Cl8ZaQBPGhA/zCuU5Q8mruyzrMDqZMCrTlzJOoOkSw9o7JW7yo7iiyo11N7Q5jgWuacwQdYK8PpY3JklxIp7cqo3XudiTsU+dpXQ8n387QuLU5ktNSn95sSOGYb5yvN5RaJNpdVbeSWtIdTJ1mm7Ns7yOqTvaUaBuubuKT9mINP3XdE+2e5VaNWOTCp2TnpU03OM8U8UzKdC7NJ9OuNdJ7Kg/C4H3L6EdQNTptgtdmDOwr580nb4H1afkue3uBMepbjyN0visbVxEnmWAmdZaMJ9YKnUK5K053lJGirHKm09/wAbZv8AUUKDxD7XqQp5yx4fLDSDvEboEDOhVG3awjfxWJ6KZNWi3e+mPO5q3Ll9QaNHXRDR/CcsL0c/C9jvJIPmE+5V9b7zTrOTqfpSqnrILuvjqPf5TnO/mJPvXueD1oOkredgrHv5p65wLo/B1/7lQ+7W/wAl6iU+cqF3aiYaN6J2G2SiUyUSrs+cD5RKZKJQD5RKZKJQD5RKZKJQD5RKZKJQD5RKZKJQD5RKZKJQD5RKZKJQD5RKZKJQD5RKZKJQGT+Fpo8dpHfbie6rUXGldl4Wv+spf+OP82ouMVNV/uqfQrE/4mF/Tb8VZz/LFN/89NjvetX8FVBr9G0pnourNy/7zz71kF0+S0/YYP5WhvuWpeC6s4aPaA4j5Sr/AI1vo1/UcV3KBt1LGnYv0O08ed9nzFCt+Lt8kJVZHHHKcsLV5sbronKhVPmYT7liFN2Q7PaF9GaTcyvRq0YPytN7M/tNLfevm+geiFX1yalOs5MuT9RpIui8HZ/9Sofdrf5T1zi9Lk1pAW95QrOMNa+Hnc14LCTwAdPcodOt0iKpe2kxX0sjU7DeZRKbKJV4fNh0olNlEoB0olNlEoB0olNlEoB0olNlEoB0olNlEoB0olNlEoB0olNlEoB0olNlEoB0olNlEoDKvCyf+cpf+OP82ouMXReEPSDa1+/CZbSa2lOwuaXOfHY5xH4Vzipqpb5FPoljsVlGxFHT/Xetp8Ez2t0bSlwEvrH/AO1w9yxNxyW5ciNFubo+1AgTSa/OddSah2b3Fb6FM1UrOUrk5pjeJ7Pi7/JKFd8dZx8yFZHHEXimDp4pw5xEL575QWvNXdxT1BtV5H3XnG31OC+gKdy5xDTEHIrKfDBormrunWaOjWp4T9+nlmeLXN/lKi1bMUfgXdgTpHVYV/lkcMghIhVJ3a5ncckOXvMMbQug51NohlVoxOa0amvbrcBqBGeyDrXc0eVVg4SL23H3qjKZ72vII7wsOSYRuCmMrHNS5UOfquT8Mr1cxcN5u3wlsfp1p6aj+pHwlsfp1p6aj+pYThG4IwjcFs07gRujTd83b4S2P0609NR/Uj4S2P0609NR/UsJwjcEYRuCadwHRpu+bt8JbH6daemo/qR8JbH6daemo/qWE4RuCMI3BNO4Do03fN2+Etj9OtPTUf1I+Etj9OtPTUf1LCcI3BGEbgmncB0abvm7fCWx+nWnpqP6kfCWx+nWnpqP6lhOEbgjCNwTTuA6NN3zdvhLY/TrT01H9SPhLY/TrT01H9SwnCNwRhG4Jp3AdGm75u3wlsfp1p6aj+pHwlsfp1p6aj+pYThG4IwjcE07gOjTd83b4S2P0609NR/Uj4S2P0609NR/UsJwjcEYRuCadwHRpu+bo/lRYAT49a91Wm4+YGVyPKfwitLTSssRccjWILQ0f3bXZl3EgRxWc4RuCVeH1rlS5EN9PydhY7E91/AGiEqRChLmdCiIiXIObQdUc2m3rVHNYO1xDR7V9H0q4pNFINyYA0ZxkAANixHwe2Jq39N0dGiDVMiRIyZ34nNP4St0pWzXgOcMzmcyFaUbLmX9pxfKKfHOjE2J/Y3xAeUfMlUPjruHmSKYc8W67GhpLQ0GMoAnuXGcv9FPubKpGIvo/LMmSeh1gOJYXd8Lp6Nu5rg4iAMyclYuqgeMLczMxw71hyXpcbIpFjej01ofM7XTmlXtcs9Bmzu30sJFN/ylLdgd80fdMt7AN68RUkjMLlQ+lU07Z4myN2ioSIXgkCoSIQCoSIQCoSIQCoSIQCoSIQCoSIQCoSIQCoSIQCoSIQColIrmhdGOua9O3aSMbuk7yWDN7u4T3wNq9MbiW5DVNK2JivdqQ1TwO6HDLV9w9oxV3dGR/ZskN17yXHshdhcPcHENLgNkTHdCaLNoaxlFvybGNY0CBAbkBnwhXaNdrWhrjBGsZq7Y3C1EPmlRMs0rpF2kuBu5vmCF53ir/J9iF6NJZddh4wAEE5ZwmU6RpHE7Masv9exOdaBnTBJIz2JrKvO9EiNuX9cUBzfhB0D4/bE0m/LUZfT1S7yqf4gPOGrDQV9LPPNZDPFv4dnasn8J3JYsJv6LIp1CeeaPmPJ/ifddt3E8VDqocSYk1nRWFaPNO5l65Lq8TgUJJQq07K8VCRCwZFQkQgFQkQgFQkQgFQkQgFQkQgFQkQgFQkQgFQkQsi8Ula14LeTBZRNw8RVqgYQfm0tbe9x6R4BvFcj4O+SvjtfHUH/L0z0v7x4zDBvG13cNq2t45rMZzv4disaWG7rKcjb1oI5eYYuW37BTqCl0XSSc8vNt7E11qXnGCIOeacynzvSMiMsvP70112WdAAENyzU05gl8fbuPq/NCPEW7z6kiAgpXDnENcZByIgKe5YKYxMEGY35d6krluE4S2YyiJ7oVazkO6cxHzpiZG9APtRzk4841bNfYoL8CHUoBYRBaQHAhwzBnWCpr3OMHGcPdrhS2pAb0onPra/WgML5ccj32ThUYC62qRgdrLCc+befYdvbr5ZfRt7aCqH03sL6byQWkEtLSfYsg5cciH2bjVpHnLY7Zl1LhU3t3O88azX1FP/Jp11kWwjkSGZc9i9pyKEiFCOlvFQkQsGRUJEIBUJEIBUJEIBUJEIBUJEIBUJELJgVe1yU5OVL6sGNJbTBHOVNjQTqbvedg7zkpeSnJOveuloc2i0w+pBP4WD5zvUNu47porRtvbUBRota0NBgSC4uIzJOsuJ2qZT09/Wcc/a1rpEixRL1tq9gtvo2la0WsoMDGsADdZ25kzrJzJO0lSWp5yQ/ONWz2JloHBwxTGczMetS3uYGDvw++FYnGqqqt6kdy80zhYYETvzz39ino27XNDnCSdZzHsTbMgN6cTPztcQN6r3AfiOHFGyJjuhDAeOP3+oIXoYm72+pCAoUrZzSHEQBmVPcVBUGFhk692Xf2ppuw/oQRiylI2lzXSJnZGr+tSAW2PNzjynVt1diZXol5xNzB7vanuHPaujh79f8AsgV+a6BE8dWtASNuWgBhOYEajr1KtTtS3N4GHMHUQQQRBG3Wnm1np4gJ6UducIdeNqdDVO3Xqz9yAzjlb4N2vLquj4BzLqB6LT/2icm/dOW4jUsxuKD6b3U6jHMe0w5rgWuB4gr6TDhS6ROKcssuK8zTmg7W/b8rSzbkHDJ7dvRcM+4yOCjS0zX5prLygtuSDqydZvmfPaJXa8ofB1XouJt3iu0bDDKg27ei7uIPBcbc0H03FlRj2OGtr2uY4dzhKgPhczWh1VPXwVCXsd8BkolIhaiaLKJSIQCyiUiEAsolIhALKJQxpcQ1oLnHUAC4nsAzK6/Q3g6vKox1h4vTy64moRwpzl+IjsWxkTn6kIlRWwQJe9xyLQSQACSTAAzJJ1AAazwWhckfBrVqxVugWs2UQYef+4fmDgM+xdryZ5MWduIo0zzm2rUh7yNRAOQaOAAXQNrilkc5z3cFOipUbm45avtySW9kWSdu0dY83RY2kA1gYIDWiABrAEZalGLZwdijKZ7plONIVOmHATsPDL3J/jgPQjX0ZkdkqWUGsfXrNe3C0yT2jV2qO2HNyX5Tq2+xAt+b6ZMxs1a8krnc9kMo79aAbcMNQ4mZiI3Z5nb2qalcNYA1xzGvIlRtq810SJnPdw9yQ2hf05jFnEICPxJ/DzoU3j48k+cJUAPtWsGIEyMxMQo6VU1ThdAGvLL29qioV3OcAXSCcwrN2wMbLRBmJCAjuCaPUznXOersjeoWM5wY3EzwyGSsWXTnF0o1Sort5a7C0wNyArm6cDggQDh2zAy3qSpbimMYmRviM8verjLRhaHFuZAM8YVK2lzg0uJB1juQDaT+dydkBnllw2ylqu5rJuc555+yFPeW4YAWGCTCSzt8YJdDjMZoCNluKgxmZOuNWWXuVK+pU64FKtRpVGTHTaHRnEidR4q1c42uLWmAIgDslWnWgDS7CJiZ4xMoZRVRb0OG0z4MbItLqTq1E7g4VG58HgnzOC5ir4L7kzzVei+Njw+kfViC1a1xudhdmM8slJeUiyMIwzMwtToGO2E+K1KqLU/55mH3nIPSNMwbcO4sqUSPMXA+pV3cjtI/QqxncGu9hW9WlHG2XCTMSd2SrV3va4gEgDUMlrWkYTG8oKpNaJ6+JhVPkrfkwLOtPEAe0q2zkJpI5m1LRql1Si0ebHPqW7VrUNaSGwQJBVa0Dnuh0kRMFY0Rhl3KCqXUieviZRozwX3dTr16FMDdjqHzQ0ete5b+DW1pO+VqVaxAGU80w9zel/8AJd9eMLIwjDMzHCPzUlrb424nNk55lbGwRpsIctq1Umt/yKGi9AW1FgNGk2nIBOEAE5TmYxHvJU9O5LzgIEHXGveke54cWgwJgDLVMQrlxahrS5oAI1HvW7UV7nK5b1Ur1WCl0m5k5Z58dnYik3nc3ZRlll7UtnTLyQ4yIlOvKeAgNOEEbEMENS4NM4GxA3688/epTatAxyZjFside5WLW0a5oc4STMnvVZrjiwyYxRHCYhANpXLnnAcgd07M9qsGaQkbd/DshTXNFrGlzWgERmO1R2Rxzi6UREoBaVMVRidkRlllx29qY+6cw4QBAyEzPtRePLHQ0wImBvkqxQotc0OIBJGZQCeIt3u9X5JFU8Zf5R9SVAehc9R3YVT0d1j2fkhCAfpP5vf7lNY9Qd/tQhAUqn8T8XvV+76h/ralQgKmjesez3pdJax2e9CEBZs+oO/2leezr/i96VCAu3vUPd7VBo3W7u96EIBukOsOz81cteq3sQhAedbddvarmkOp3hCEAzRvzu73qK/6/chCAvU+oPuj2LzrPrjv9hQhAWtI9UdvuKNG9U9vuQhAVr3rnu9gXoO6v4fchCAoWPX7ip9Jah2lCEA7R3VPb7gqd11z2+5KhAemhCEB/9k="></a></td>
+                    </tr>
+                    <%})%>
+                    
+               </tbody>
+            </table>
+        </div>
+    </div>
+        
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="mainfoot">
+            <div class="first footercol">
+                <h3>About</h3>
+                <p>Presto </p>
+                <p>Canada</p>
+                <p>1-877-378-6123</p>
+                
+            </div>
+            <div class="first footercol">
+                <h3>Quick Links</h3>
+                <ul class="footlink">
+              <li><a href="/">Home</a></li>
+              <li><a href="/prestoApp">Learn</a></li>
+              
+              <li><a href="/about">About </a></li>
+              <li><a href="/contactIn">Contact Us</a></li>
+              
+              <li><a href="/booking/book">Book</a></li>
+           </ul>
+            </div>
+            <div class="first footercol">
+                <h3>Follow Us</h3>
+                <div class="social">
+                    <a href="https://www.facebook.com/PRESTOcard">
+                    <img src="/images/fb.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/explore/tags/prestocard/?hl=en">
+                    <img src="/images/insta.png" alt="Instagram">
+                    </a>
+                    <a href="https://twitter.com/PRESTOcard">
+                    <img src="/images/tw.png" alt="Google+">
+                    </a>
+                    <a href="https://www.youtube.com/user/PRESTOcard">
+                    <img src="/images/yt.png" alt="YouTube">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyfoot">
+            <p>Presto Canada</p>
+        </div>
+    </footer>
+    <script>
+        // changing themes function
+let theme1 = document.getElementById('dark');
+
+theme1.addEventListener("click", first);
+function first(){
+    document.getElementById('form').style.background = 'black';
+    document.getElementById('form').style.backgroundSize = 'cover';
+    document.getElementById('info').style.backgroundRepeat = 'no-repeat';   
+}
+
+let theme2 = document.getElementById('yellow');
+theme2.addEventListener("click",second);
+function second(){
+    document.getElementById('form').style.backgroundImage = 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHU8KCF4EhVLWd4oVEhLzE8RjL6WOFHAIhPA&usqp=CAU")';
+    document.getElementById('form').style.backgroundSize = 'cover';
+    document.getElementById('info').style.backgroundRepeat = 'no-repeat';  
+}
+
+let theme3 = document.getElementById('green');
+theme3.addEventListener("click", third);
+function third(){
+    document.getElementById('form').style.backgroundImage = 'url("https://images.sharefaith.com/images/3/1595614756329_3/img_mouseover3.jpg")';
+    document.getElementById('form').style.backgroundSize = 'cover';
+    document.getElementById('info').style.backgroundRepeat = 'no-repeat';  
+}
+
+let defaultTheme = document.getElementById('default');
+defaultTheme.addEventListener("click",fourth);
+
+function fourth(){
+    document.getElementById('form').style.backgroundImage = 'url("https://www.w3schools.com/howto/img_lights_wide.jpg")';
+    document.getElementById('form').style.backgroundSize = 'cover';
+    document.getElementById('info').style.backgroundRepeat = 'no-repeat';  
+    document.getElementById('info').style.color = 'white';
+}
+
+
+/////------------CSS------------------
+
+
+document.body.style.padding = '0'; // css on body
+document.body.style.margin = '0'; // css on body
+
+document.getElementById('form').style.backgroundImage = 'url("https://www.w3schools.com/howto/img_lights_wide.jpg")';
+    document.getElementById('form').style.backgroundSize = 'cover';
+    document.getElementById('info').style.backgroundRepeat = 'no-repeat';  
+document.getElementById('form').style.padding = "40px"; // css on form 
+
+let cssL = document.getElementsByClassName("bookS");
+for (let x = 0; x < cssL.length; x++) {
+	cssL[x].style.color = "white";
+}
+
+
+//css on errors of validation
+let css4 = document.getElementsByClassName("error");
+for (let x = 0; x < css4.length; x++) {
+	css4[x].style.color = "red";
+}
+
+let cssC = document.getElementsByClassName("editIcon");
+for (let x = 0; x < cssC.length; x++) {
+	cssC[x].style.height = "20px";
+}
+
+
+
+// css on buttons of themes
+let css6 = document.getElementById("abc");
+css6.style.marginTop = "20px";
+css6.style.marginBottom = "20px";
+
+//css on table
+let css7 = document.getElementById("info");
+css7.style.color = "white";
+css7.style.marginBottom = "20px";
+document.getElementById('table').style.padding = "0 120px 50px";
+
+//css on submit button
+let css8 = document.getElementById("submit");
+css8.style.background = "#3a811e";
+css8.style.borderTopColor = "#3a811e";
+
+css8.addEventListener('mouseover', (event)=>{
+    css8.style.opacity = "0.8";
+})
+
+css8.addEventListener('mouseout', (event)=>{
+    css8.style.opacity = "1";
+})
+
+
+function validate(){
+let first_name = document.getElementById('firstName').value;
+let last_name = document.getElementById('lastName').value;
+let address_1 = document.getElementById('address').value;
+let city = document.getElementById('city').value;
+let date_1 = document.getElementById('date').value;
+let zip = document.getElementById('zipCode').value;
+let phn = document.getElementById('phone').value;
+let busNum = document.getElementById('busNumber').value;
+let email = document.getElementById('email').value;
+
+var matches = first_name.match(/\d+/g);
+if(first_name == "")
+{
+    text="Please enter your first name";
+    document.getElementById('fname_error').firstChild.nodeValue = text;
+    document.getElementById('firstName').focus();
+    return false;
+   
+}
+else if(matches != null){
+    text="Please enter a valid first name";
+    document.getElementById('fname_error').firstChild.nodeValue = text;
+    document.getElementById('firstName').focus();
+    return false;
+}
+else{
+    text=" ";
+    document.getElementById('fname_error').firstChild.nodeValue = text;
+    
+}
+
+var matchesL = last_name.match(/\d+/g);
+if(matchesL !=null){
+    text="Please enter a valid last name";
+    document.getElementById('lname_error').firstChild.nodeValue = text;
+    document.getElementById('lastName').focus();
+    return false;
+}
+else if(last_name==""){
+    text="Please enter your last name";
+    document.getElementById('lname_error').firstChild.nodeValue = text;
+    document.getElementById('lastName').focus();
+    return false;
+}
+else{
+    text=" ";
+    document.getElementById('lname_error').firstChild.nodeValue = text;
+}
+
+if(address_1 == "")
+{
+    text="Please enter your address";
+    document.getElementById('address_error').firstChild.nodeValue = text;
+    document.getElementById('address').focus();
+    return false;
+}
+else if(address_1!=""){
+    text=" ";
+    document.getElementById('address_error').firstChild.nodeValue = text;
+}
+else{
+    text=" ";
+    document.getElementById('address_error').firstChild.nodeValue = text;
+}
+
+var matchesC = city.match(/\d+/g);
+if(matchesC !=null){
+    text="Please enter a valid city";
+    document.getElementById('city_error').firstChild.nodeValue = text;
+    document.getElementById('city').focus();
+    return false;
+}
+else if(city==""){
+    text="Please enter a city";
+    document.getElementById('city_error').firstChild.nodeValue = text;
+    document.getElementById('city').focus();
+    return false;
+}
+
+else{
+    text=" ";
+    document.getElementById('city_error').firstChild.nodeValue = text;
+    
+} 
+
+if(date_1 == "")
+{
+    text="Please enter your depart date";
+    document.getElementById('date_error').firstChild.nodeValue = text;
+    document.getElementById('date').focus();
+    return false;
+}
+
+else{
+    text=" ";
+    document.getElementById('date_error').firstChild.nodeValue = text;
+}
+
+var postalCodeRegex = zip.match(/^[ABCEGHJKLMNPRSTVXYabceghjklmnprstvxy]{1}\d{1}[A-Za-z]{1}\d{1}[A-Za-z]{1}\d{1}$/);
+if(zip == "")
+{
+    text="Please enter a Zip Code";
+    document.getElementById('zip_error').firstChild.nodeValue = text;
+    document.getElementById('zipCode').focus();
+    return false;
+   
+}
+else if(postalCodeRegex != null){
+    text="Please enter a valid Zip Code";
+    document.getElementById('zip_error').firstChild.nodeValue = text;
+    document.getElementById('zipCode').focus();
+    return false;
+}
+else{
+    text=" ";
+    document.getElementById('zip_error').firstChild.nodeValue = text;
+    
+}
+
+if(phn == "")
+{
+    text="Please enter your phone number";
+    document.getElementById('phn_error').firstChild.nodeValue = text;
+    document.getElementById('phone').focus();
+    return false;
+   
+}
+else if(isNaN(phn)||phn.length !=10){
+    text="Please enter a valid phone number";
+    document.getElementById('phn_error').firstChild.nodeValue = text;
+    document.getElementById('phone').focus();
+    return false;
+}
+
+else{
+    text=" ";
+    document.getElementById('phn_error').firstChild.nodeValue = text;
+    
+}
+
+if(busNum == "")
+{
+    text="Please enter your bus number of route";
+    document.getElementById('busNumber_error').firstChild.nodeValue = text;
+    document.getElementById('busNumber').focus();
+    return false;
+   
+}
+
+else if(isNaN(busNum)||busNum.length>3||busNum.length<1){
+    text="Please enter a valid bus number";
+    document.getElementById('busNumber_error').firstChild.nodeValue = text;
+    document.getElementById('busNumber').focus();
+    return false;
+}
+else{
+    text=" ";
+    document.getElementById('busNumber_error').firstChild.nodeValue = text;
+    
+}
+if(email.indexOf('@')==-1 || email.length<7){
+    text="Please enter a valid email address";
+    document.getElementById('email_error').firstChild.nodeValue = text;
+    document.getElementById('email').focus();
+    return false;
+}
+else if(email == "")
+{
+    text="Please enter your email address";
+    document.getElementById('email_error').firstChild.nodeValue = text;
+    document.getElementById('email').focus();
+    return false;
+   
+}
+else{
+    text=" ";
+    document.getElementById('email_error').firstChild.nodeValue = text;
+    
+}
+}
+
+</script>
